@@ -6,11 +6,30 @@
   <title>AR Model – All Animations</title>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <style>
-    body { margin:0; background:#f0f0f0; display:flex; justify-content:center; align-items:center; height:100vh; }
-    model-viewer { width:100%; height:100%; max-width:600px; background:#fff; }
+    body {
+      margin: 0;
+      background: #f0f0f0;
+      /* allow scrolling */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+    model-viewer {
+      width: 100%;
+      max-width: 600px;
+      height: 400px;       /* ↓ smaller box */
+      background: #fff;
+    }
+    p {
+      max-width: 600px;
+      line-height: 1.5;
+    }
   </style>
 </head>
 <body>
+
+<p>Scroll down to test the page scrolling on your phone. The AR button appears when opened on a supported mobile device over HTTPS.</p>
 
 <model-viewer
   id="viewer"
@@ -23,6 +42,8 @@
   autoplay
   alt="3D model">
 </model-viewer>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scroll further to confirm the page moves independently of the model viewer box.</p>
 
 <script>
   const viewer = document.getElementById('viewer');
