@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projekt</title>
+  <title>AR Model – All Animations</title>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <style>
     body {
@@ -61,6 +61,20 @@
   </model-viewer>
 </div>
 
+<div class="viewer-container" style="margin-top:32px;">
+  <model-viewer
+    id="viewer2"
+    src="semesterproject 2.2test.glb"
+    ios-src="semesterproject2.2test.usdz"
+    ar
+    ar-modes="scene-viewer quick-look webxr"
+    camera-controls
+    auto-rotate
+    autoplay
+    alt="Second 3D model">
+  </model-viewer>
+</div>
+
 <script>
   const viewer = document.getElementById('viewer');
   viewer.addEventListener('load', () => {
@@ -71,6 +85,23 @@
         viewer.animationName = list[i];
         viewer.play();
         viewer.addEventListener('finished', () => {
+          i = (i + 1) % list.length;
+          playNext();
+        }, { once: true });
+      };
+      playNext();
+    }
+  });
+
+  const viewer2 = document.getElementById('viewer2');
+  viewer2.addEventListener('load', () => {
+    const list = viewer2.availableAnimations || [];
+    if (list.length > 1) {
+      let i = 0;
+      const playNext = () => {
+        viewer2.animationName = list[i];
+        viewer2.play();
+        viewer2.addEventListener('finished', () => {
           i = (i + 1) % list.length;
           playNext();
         }, { once: true });
