@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AR Model – All Animations</title>
+  <title>Semesterprojekt</title>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <style>
     body {
       margin: 0;
-      background: #f0f0f0;
-      /* allow scrolling */
+      background: #cee7ff;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -18,18 +17,14 @@
     model-viewer {
       width: 100%;
       max-width: 600px;
-      height: 400px;       /* ↓ smaller box */
-      background: #fff;
-    }
-    p {
-      max-width: 600px;
-      line-height: 1.5;
+      height: 400px;
+      background: #ffffff;
     }
   </style>
 </head>
 <body>
 
-<p>Scroll down to test the page scrolling on your phone. The AR button appears when opened on a supported mobile device over HTTPS.</p>
+<h1>semesterprojekt</h1>
 
 <model-viewer
   id="viewer"
@@ -42,8 +37,6 @@
   autoplay
   alt="3D model">
 </model-viewer>
-
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scroll further to confirm the page moves independently of the model viewer box.</p>
 
 <script>
   const viewer = document.getElementById('viewer');
